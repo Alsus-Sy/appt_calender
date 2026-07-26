@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment Calendar</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Book an Appointment</h1>
+
+    <form id="appointmentForm">
+      <div class="field">
+        <label for="appointmentDate">Select a date</label>
+        <input id="appointmentDate" name="appointmentDate" type="date" required>
+      </div>
+
+      <div class="field">
+        <label for="appointmentTime">Select a time</label>
+        <input id="appointmentTime" name="appointmentTime" type="time" required>
+      </div>
+
+      <button type="submit">Save Appointment</button>
+      <button id="showAppointmentButton" class="secondary-button" type="button">Show Calendar</button>
+    </form>
+
+    <p id="result" aria-live="polite"></p>
+    <p id="savedAppointment" aria-live="polite"></p>
+
+    <section class="appointments-panel">
+      <ul id="upcomingAppointments"></ul>
+    </section>
+
+    <section class="calendar-section">
+      <p id="dayDetails" aria-live="polite"></p>
+      <div class="calendar-header">
+        <button id="previousMonthButton" class="calendar-nav" type="button" aria-label="Previous month">&lt;</button>
+        <p id="calendarMonthLabel"></p>
+        <button id="nextMonthButton" class="calendar-nav" type="button" aria-label="Next month">&gt;</button>
+      </div>
+      <div class="calendar-weekdays" aria-hidden="true">
+        <span>Sun</span>
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thu</span>
+        <span>Fri</span>
+        <span>Sat</span>
+      </div>
+      <div id="calendarGrid" class="calendar-grid"></div>
+    </section>
+  </main>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>
