@@ -2,6 +2,12 @@
   color-scheme: light dark;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -11,7 +17,7 @@ body {
   place-items: center;
   min-height: 100vh;
   padding: 16px;
-  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .card {
@@ -21,7 +27,12 @@ body {
   border-radius: 12px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
   padding: 24px;
-  box-sizing: border-box;
+  overflow-x: clip;
+}
+
+form {
+  width: 100%;
+  min-width: 0;
 }
 
 h1 {
@@ -42,12 +53,14 @@ label {
 input[type="date"],
 input[type="time"],
 button {
+  display: block;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   font-size: 1rem;
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #c4cad9;
-  box-sizing: border-box;
 }
 
 button {
@@ -238,6 +251,7 @@ h2 {
   }
 
   .card {
+    width: 100%;
     padding: 16px;
   }
 
